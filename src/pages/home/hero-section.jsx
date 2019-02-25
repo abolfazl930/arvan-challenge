@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Menu from "../../components/menu";
 import Container from "react-strap-grid/container";
 import Row from "react-strap-grid/row";
 import Col from "react-strap-grid/col";
@@ -9,7 +10,7 @@ class Hero extends Component {
   render() {
     return (
       <section className="hero-section">
-        <Container>aaa</Container>
+        <Menu />
       </section>
     );
   }
