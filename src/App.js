@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
-import Home from "./pages/home";
-
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./configs/routes";
+import Router from "./providers/router";
+import Header from "./components/header";
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
-      <>
-        <Home/>
-      </>
+      <BrowserRouter>
+        <>
+          <Header routes={Routes} />
+          <Router routes={Routes} />
+        </>
+      </BrowserRouter>
     );
   }
 }
