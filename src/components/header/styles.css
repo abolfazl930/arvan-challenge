@@ -8,9 +8,13 @@
 .header__nav__menu {
   display: flex;
   justify-content: center;
+  margin-right: 52px;
+  font-size: 18px;
+  font-weight: 500;
 }
 .header__nav__menu__menu-item {
   margin-left: 32px;
+  color: white;
 }
 .header__login-btn {
   width: 100px;
