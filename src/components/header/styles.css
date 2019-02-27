@@ -1,0 +1,31 @@
+.header {
+  height: 470px;
+  background-image: linear-gradient(330deg, #3023ae, #c96dd8 99%);
+}
+.header__nav {
+  margin-top: 32px;
+}
+.header__nav__menu {
+  display: flex;
+  justify-content: center;
+}
+.header__nav__menu__menu-item {
+  margin-left: 32px;
+}
+.header__login-btn {
+  width: 100px;
+  height: 44px;
+}
+.header__title {
+  height: calc(100% - 76px);
+  color: white;
+}
+.header__account-btn {
+  width: 200px;
+  height: 60px;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  color: #ffffff !important;
+}
