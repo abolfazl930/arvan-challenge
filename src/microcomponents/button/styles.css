@@ -1,0 +1,74 @@
+.btn {
+  width: 100%;
+  border-radius: 30px;
+  border: solid 2px #ffffff;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+/*Default Button*/
+.btn.default {
+  color: var(--primaryBlue);
+}
+.btn.default:hover {
+  color: var(--darkBlue);
+}
+.btn.default:disabled {
+  color: var(--disabled);
+  cursor: no-drop;
+}
+/*Outline Button*/
+.btn.outline {
+  border: 2px solid var(--primaryBlue);
+  color: var(--primaryBlue);
+}
+.btn.outline:hover {
+  border-color: var(--darkBlue);
+  color: var(--darkBlue);
+}
+.btn.outline:disabled {
+  border-color: var(--disabled);
+  cursor: no-drop;
+  color: var(--grayLight);
+}
+/*Light Button*/
+.btn.light {
+  background: var(--lightBlue);
+  color: var(--primaryBlue);
+}
+.btn.light:hover {
+  background: var(--darkLight);
+  color: var(--primaryBlue);
+}
+.btn.light:disabled {
+  background: var(--disabled);
+  color: var(--grayLight);
+  cursor: no-drop;
+}
+/*Primary Button*/
+.btn.primary {
+  background: var(--primaryBlue);
+  color: var(--white);
+}
+.btn.primary:hover {
+  background: var(--darkBlue);
+  color: var(--white);
+}
+.btn.primary:disabled {
+  background: var(--disabled);
+  color: var(--grayLight);
+  cursor: no-drop;
+}
+/*Primary Button*/
+.btn.suceess {
+  background: var(--success);
+  color: var(--white);
+}
+.btn.suceess:hover {
+  background: var(--darkGreen);
+  color: var(--white);
+}
+.btn.suceess:disabled {
+  background: var(--disabled);
+  color: var(--grayLight);
+  cursor: no-drop;
+}
