@@ -10,10 +10,10 @@ class Blog extends Component {
       <section className="blog-section">
         <Container>
           <Row>
-            <Col md="8">
+            <Col md="7">
               <Articles />
             </Col>
-            <Col md="4">b</Col>
+            <Col md="5">b</Col>
           </Row>
         </Container>
       </section>
