@@ -7,18 +7,17 @@ class Header extends Component {
   render() {
     const { routes } = this.props;
     return (
-      <header class="header d-flex">
+      <header className="header d-flex">
         <Container>
           <nav className="header__nav d-flex justify-content-between align-items-center">
-            <figure class="header__nav__logo">logo</figure>
+            <figure className="header__nav__logo">logo</figure>
             <div className="d-flex align-items-center">
               <ul className="header__nav__menu">
                 {routes.map((route, index) => (
-                  <li>
+                  <li key={index}>
                     <Link
                       className="header__nav__menu__menu-item"
                       exact={route.exact}
-                      key={index}
                       to={route.path}
                     >
                       {route.title}
