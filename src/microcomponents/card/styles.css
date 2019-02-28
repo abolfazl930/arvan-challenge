@@ -13,3 +13,17 @@
 .card__body {
   padding: 30px;
 }
+.card__body__title {
+  margin-top: 10px;
+}
+.card__body__date {
+  font-size: 14px;
+  color: #94a1ac;
+  margin-top: 17px;
+}
+.card__body__content {
+  line-height: 1.88;
+  margin-top: 25px;
+  font-size: 16px;
+  color: #4e5c66;
+}
