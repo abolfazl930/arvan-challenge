@@ -4,15 +4,30 @@ import { formatDate } from "../../utils/convert-date-format";
 
 import "./styles.css";
 
-class SearchBox extends React.Component {
+class LatestArticle extends React.Component {
+  articles = null;
+
+  componentDidMount() {
+    console.log("...", this.props.articles);
+  }
+
+  filterData = () => {
+    this.articles = this.props.articles.slice(
+      Math.max(this.props.articles.length - 5, 1)
+    );
+  };
+
   render() {
-    const { articles } = this.props;
+    this.filterData();
     return (
       <div className="la-articles-container">
         <h4 className="la-articles-container__title">Latest Posts</h4>
         <div className="la-articles-container__list">
-          {articles.map(article => (
-            <div className="la-articles-container__list__item d-flex">
+          {this.articles.map((article, index) => (
+            <div
+              className="la-articles-container__list__item d-flex"
+              key={index}
+            >
               <img
                 src={article.image}
                 class="la-articles-container__list__item__img"
@@ -33,4 +48,4 @@ class SearchBox extends React.Component {
   }
 }
 
-export default SearchBox;
+export default LatestArticle;
