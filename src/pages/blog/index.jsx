@@ -1,12 +1,16 @@
 import React, { Component } from "react";
+
 import Container from "react-strap-grid/container";
 import Row from "react-strap-grid/row";
 import Col from "react-strap-grid/col";
+
 import admin from "../../services/admin";
-import Articles from "./blog-articles";
-import SearchBox from "./blog-search-box";
-import Category from "./blog-Category";
-import LatestArticles from "./latest-articles";
+
+import Articles from "../../components/blog-articles";
+import SearchBox from "../../components/blog-search-box";
+import Category from "../../components/blog-categry";
+import LatestArticles from "../../components/latest-articles";
+
 import "./styles.css";
 class Blog extends Component {
   state = {

@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "../../microcomponents/input";
 import imgSearchIcon from "../../assets/images/search.svg";
-import "./blog-search-box.css";
+import "./styles.css";
 
 class SearchBox extends React.Component {
   render() {

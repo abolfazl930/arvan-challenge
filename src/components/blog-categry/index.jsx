@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./blog-category.css";
+import "./styles.css";
 
 class SearchBox extends React.Component {
   state = {

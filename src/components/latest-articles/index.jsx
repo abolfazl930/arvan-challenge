@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { formatDate } from "../../utils/convert-date-format";
 
-import "./latest-articles.css";
+import "./styles.css";
 
 class SearchBox extends React.Component {
   render() {

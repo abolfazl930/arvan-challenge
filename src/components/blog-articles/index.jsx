@@ -7,7 +7,7 @@ import { trimString } from "../../utils/trime-string";
 import { formatDate } from "../../utils/convert-date-format";
 import { Link } from "react-router-dom";
 
-import "./blog-articles.css";
+import "./styles.css";
 
 class Articles extends Component {
   render() {
