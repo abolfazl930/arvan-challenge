@@ -1,0 +1,13 @@
+.input-container {
+  position: relative;
+}
+.input-container__input {
+  padding-right: 45px;
+}
+.input-container__icon {
+  position: absolute;
+  width: 14px;
+  height: 15px;
+  right: 30px;
+  top: 23px;
+}
