@@ -10,6 +10,7 @@ import Articles from "../../components/blog-articles";
 import SearchBox from "../../components/blog-search-box";
 import Category from "../../components/blog-categry";
 import LatestArticles from "../../components/latest-articles";
+import News from "../../components/news";
 
 import "./styles.css";
 class Blog extends Component {
@@ -54,6 +55,10 @@ class Blog extends Component {
             </Col>
           </Row>
         </Container>
+        <News
+          title="Subscribe Our Newsletter"
+          content="Donec tempor finibus ante ac luctus. Fusce facilisis nisi vel odio tincidunt maximus. Pellentesque tempus gravida viverra."
+        />
       </section>
     );
   }

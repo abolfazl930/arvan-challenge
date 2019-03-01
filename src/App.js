@@ -12,6 +12,7 @@ class App extends Component {
         <>
           <Header routes={Routes} />
           <Router routes={Routes} />
+          {/* <Footer/> */}
         </>
       </BrowserRouter>
     );
