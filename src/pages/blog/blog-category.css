@@ -1,0 +1,23 @@
+.category-container {
+  margin-top: 60px;
+}
+.category-container__title {
+  font-size: 22px;
+  font-weight: 500;
+  color: #293039;
+}
+.category-container__list {
+  margin-left: 12px;
+  margin-top: 12px;
+}
+
+.category-container__list__item {
+  font-size: 16px;
+  line-height: 3.75;
+  text-align: left;
+  color: #3b2eb2;
+  border-bottom: 1px solid #e6e6e6;
+}
+a {
+  color: #666666;
+}
