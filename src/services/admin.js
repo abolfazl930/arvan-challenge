@@ -10,6 +10,14 @@ export default {
           pageSize
         }
       });
+    },
+    getBySlug: async ({ slug }) => {
+      return await get({
+        api: "GetArticlesBySlug",
+        model: {
+          slug
+        }
+      });
     }
   }
 };
