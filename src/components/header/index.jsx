@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import routes, { visibleRoutes } from "../../configs/routes";
 import Button from "../../microcomponents/button";
 import Container from "react-strap-grid/container";
 import "./styles.css";
 class Header extends Component {
   render() {
-    const { routes } = this.props;
+    // const { routes } = this.props;
     return (
       <header className="header d-flex">
         <Container>
@@ -13,17 +14,19 @@ class Header extends Component {
             <figure className="header__nav__logo">logo</figure>
             <div className="d-flex align-items-center">
               <ul className="header__nav__menu">
-                {routes.map((route, index) => (
-                  <li key={index}>
-                    <Link
-                      className="header__nav__menu__menu-item"
-                      exact={route.exact}
-                      to={route.path}
-                    >
-                      {route.title}
-                    </Link>
-                  </li>
-                ))}
+                {visibleRoutes({ visibleIn: ["header"] }).map(
+                  (route, index) => (
+                    <li key={index}>
+                      <Link
+                        className="header__nav__menu__menu-item"
+                        exact={route.exact}
+                        to={route.path}
+                      >
+                        {route.title}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
               <Button
                 type="button"
