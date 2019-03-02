@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <>
-          <Header routes={Routes} />
+          <Header />
           <Router routes={Routes} />
           {/* <Footer/> */}
         </>
