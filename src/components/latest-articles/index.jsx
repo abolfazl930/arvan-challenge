@@ -34,7 +34,7 @@ class LatestArticle extends React.Component {
               />
               <div className="la-articles-container__list__item__content d-flex flex-column justify-content-between">
                 <h4 className="la-articles-container__list__item__content__title">
-                  <Link to="#">{article.title}</Link>
+                  <Link to={`/blog/${article.slug}`}>{article.title}</Link>
                 </h4>
                 <p className="la-articles-container__list__item__content__date">
                   post {formatDate(Number(article.createdAt))}
