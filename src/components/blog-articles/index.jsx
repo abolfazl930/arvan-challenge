@@ -22,7 +22,9 @@ class Articles extends Component {
               <Col md="6" key={index}>
                 <Card
                   img={article.image}
-                  title={<Link to="test">{article.title}</Link>}
+                  title={
+                    <Link to={`/blog/${article.slug}`}>{article.title}</Link>
+                  }
                   date={formatDate(Number(article.createdAt))}
                   content={trimString(article.summary, 80)}
                 />
