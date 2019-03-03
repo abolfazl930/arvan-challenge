@@ -31,8 +31,8 @@ class SearchBox extends React.Component {
       <div className="category-container">
         <h4 className="category-container__title">Categories</h4>
         <ul className="category-container__list">
-          {categories.map(category => (
-            <li className="category-container__list__item">
+          {categories.map((category, index) => (
+            <li className="category-container__list__item" key={index}>
               <Link to="#">{category}</Link>
             </li>
           ))}
