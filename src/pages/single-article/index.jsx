@@ -6,9 +6,9 @@ import Col from "react-strap-grid/col";
 
 import admin from "../../services/admin";
 
+import Header from "../../components/header";
 import { formatDate } from "../../utils/convert-date-format";
 import Loader from "../../microcomponents/loader";
-import Articles from "../../components/blog-articles";
 import SearchBox from "../../components/blog-search-box";
 import Category from "../../components/blog-categry";
 import LatestArticles from "../../components/latest-articles";
@@ -63,56 +63,61 @@ class SingleArticle extends Component {
     const { articleContent, articles } = this.state;
     return (
       <section className="single-blog-section">
-        <Container>
-          <Row>
-            <Col md="7">
-              <div className="single-article-container">
-                {articleContent === null ? (
-                  <Loader />
-                ) : (
-                  <>
-                    <h1 className="single-article-container__title">
-                      {articleContent.title}
-                    </h1>
-                    <p className="single-article-container__date">
-                      Date: {formatDate(Number(articleContent.createdAt))}
-                    </p>
-                    <figure className="single-article-container__img">
-                      <img src={articleContent.image} />
-                    </figure>
-                    <div
-                      className="single-article-container__content"
-                      dangerouslySetInnerHTML={{ __html: articleContent.body }}
-                    />
-                    <div className="single-article-container__tag-list d-flex">
-                      <p className="single-article-container__tag-list__title">
-                        Tags:
+        <Header title="Single Blog" content="Home - Blog Single" />
+        <main>
+          <Container>
+            <Row>
+              <Col md="7">
+                <div className="single-article-container">
+                  {articleContent === null ? (
+                    <Loader />
+                  ) : (
+                    <>
+                      <h1 className="single-article-container__title">
+                        {articleContent.title}
+                      </h1>
+                      <p className="single-article-container__date">
+                        Date: {formatDate(Number(articleContent.createdAt))}
                       </p>
-                      {articleContent.tags.map((item, index) => (
-                        <span className="single-article-container__tag-list__item">
-                          {item.title}
-                        </span>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-            </Col>
-            <Col md="3">
-              <Row>
-                <Col>
-                  <SearchBox />
-                  <Category />
-                  <LatestArticles articles={articles} />
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-        <News
-          title="Subscribe Our Newsletter"
-          content="Donec tempor finibus ante ac luctus. Fusce facilisis nisi vel odio tincidunt maximus. Pellentesque tempus gravida viverra."
-        />
+                      <figure className="single-article-container__img">
+                        <img src={articleContent.image} />
+                      </figure>
+                      <div
+                        className="single-article-container__content"
+                        dangerouslySetInnerHTML={{
+                          __html: articleContent.body
+                        }}
+                      />
+                      <div className="single-article-container__tag-list d-flex">
+                        <p className="single-article-container__tag-list__title">
+                          Tags:
+                        </p>
+                        {articleContent.tags.map((item, index) => (
+                          <span className="single-article-container__tag-list__item">
+                            {item.title}
+                          </span>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+              </Col>
+              <Col md="3">
+                <Row>
+                  <Col>
+                    <SearchBox />
+                    <Category />
+                    <LatestArticles articles={articles} />
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+          <News
+            title="Subscribe Our Newsletter"
+            content="Donec tempor finibus ante ac luctus. Fusce facilisis nisi vel odio tincidunt maximus. Pellentesque tempus gravida viverra."
+          />
+        </main>
       </section>
     );
   }
