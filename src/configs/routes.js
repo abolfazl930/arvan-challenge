@@ -9,6 +9,13 @@ const routes = [
     component: () => lazy(() => import("../pages/home"))
   },
   {
+    title: "footer",
+    path: "/",
+    exact: true,
+    visibleIn: ["footer"],
+    component: () => lazy(() => import("../pages/home"))
+  },
+  {
     title: "blog",
     path: "/blog",
     exact: true,
@@ -21,6 +28,13 @@ const routes = [
     exact: true,
     visibleIn: [],
     component: () => lazy(() => import("../pages/single-article"))
+  },
+  {
+    title: "",
+    path: "/blog/page/:page",
+    exact: true,
+    visibleIn: [],
+    component: () => lazy(() => import("../pages/blog"))
   }
 ];
 export default routes;
