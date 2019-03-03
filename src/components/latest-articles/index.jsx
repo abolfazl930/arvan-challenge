@@ -13,7 +13,7 @@ class LatestArticle extends React.Component {
 
   filterData = () => {
     this.articles = this.props.articles.slice(
-      Math.max(this.props.articles.length - 5, 1)
+      Math.max(this.props.articles.length - 4, 1)
     );
   };
 
@@ -30,7 +30,7 @@ class LatestArticle extends React.Component {
             >
               <img
                 src={article.image}
-                class="la-articles-container__list__item__img"
+                className="la-articles-container__list__item__img"
               />
               <div className="la-articles-container__list__item__content d-flex flex-column justify-content-between">
                 <h4 className="la-articles-container__list__item__content__title">
