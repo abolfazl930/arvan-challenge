@@ -18,10 +18,10 @@ class CommentForm extends Component {
     invalidtext: false
   };
 
-  onChangeState = name => value => {
+  onChangeState = name => event => {
     this.setState(
       {
-        [name]: value,
+        [name]: event.target.value,
         [`invalid${name}`]: false
       },
       () => {
@@ -97,7 +97,7 @@ class CommentForm extends Component {
     const { slug } = this.props;
     return hiddenCommentForm === false ? (
       <div className="class__comment__form" slug={slug}>
-        <p className="class__comment__form__title">Write Your Comment</p>
+        <h4 className="class__comment__form__title">Write Your Comment</h4>
         <div className="class__comment__form__section_top">
           <Input
             className={[
@@ -134,15 +134,17 @@ class CommentForm extends Component {
 
           <Button
             className="class__comment__form__section_bottom__submit_button"
-            mode="success"
             onClick={this.onClickSendComment}
+            color="primary"
           >
             submit
           </Button>
         </div>
       </div>
     ) : (
-      <p className="class__comment__form__send_successful">success </p>
+      <p className="class__comment__form__send_successful">
+        your email has been sent!{" "}
+      </p>
     );
   }
 }

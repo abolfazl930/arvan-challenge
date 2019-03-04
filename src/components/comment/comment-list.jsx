@@ -47,7 +47,7 @@ class CommentList extends Component {
     const { slug } = this.props;
     return (
       <div className="class__comment__list" slug={slug}>
-        <h1 className="class__comment__list__title">Comments</h1>
+        <h4 className="class__comment__list__title">Comments</h4>
         {items.length === 0 ? (
           <div className="class__comment__list__comment_item">
             <p>no comment</p>
