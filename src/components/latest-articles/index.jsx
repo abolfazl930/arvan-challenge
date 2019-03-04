@@ -7,9 +7,9 @@ import "./styles.css";
 class LatestArticle extends React.Component {
   articles = [];
 
-  componentDidMount() {
-    this.filterData();
-  }
+  // componentDidMount() {
+  //   this.filterData();
+  // }
 
   filterData = () => {
     this.articles = this.props.articles.slice(
@@ -18,6 +18,7 @@ class LatestArticle extends React.Component {
   };
 
   render() {
+    this.filterData();
     return (
       <div className="la-articles-container">
         <h4 className="la-articles-container__title">Latest Posts</h4>
