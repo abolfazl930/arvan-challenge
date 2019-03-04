@@ -5,10 +5,10 @@ import { formatDate } from "../../utils/convert-date-format";
 import "./styles.css";
 
 class LatestArticle extends React.Component {
-  articles = null;
+  articles = [];
 
   componentDidMount() {
-    console.log("...", this.props.articles);
+    this.filterData();
   }
 
   filterData = () => {
@@ -18,7 +18,6 @@ class LatestArticle extends React.Component {
   };
 
   render() {
-    this.filterData();
     return (
       <div className="la-articles-container">
         <h4 className="la-articles-container__title">Latest Posts</h4>
