@@ -1,3 +1,41 @@
+:root {
+  --transition_normal: all 400ms;
+
+  --colors_green: #7ddc16;
+  --colors_yellow: #fff600;
+  --colors_white: #ffffff;
+  --colors_gray_light: #f4f4f4;
+  --colors_gray: #555555;
+  --colors_black: #000000;
+  --colors_blue: #157ddf;
+  --colors_transparent: transparent;
+
+  --sizes_s800: 800px;
+  --sizes_s720: 720px;
+  --sizes_s640: 640px;
+  --sizes_s560: 560px;
+  --sizes_s480: 480px;
+  --sizes_s400: 400px;
+  --sizes_s320: 320px;
+  --sizes_s240: 240px;
+  --sizes_s160: 160px;
+  --sizes_s80: 80px;
+  --sizes_s72: 72px;
+  --sizes_s64: 64px;
+  --sizes_s56: 56px;
+  --sizes_s48: 48px;
+  --sizes_s40: 40px;
+  --sizes_s32: 32px;
+  --sizes_s24: 24px;
+  --sizes_s16: 16px;
+  --sizes_s8: 8px;
+  --sizes_s4: 4px;
+
+  --sizes_title: 32px;
+  --sizes_header: 24px;
+  --sizes_body: 14px;
+  --sizes_small: 12px;
+}
 body {
   margin: 0;
   padding: 0;
