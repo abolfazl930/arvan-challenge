@@ -19,5 +19,28 @@ export default {
         }
       });
     }
+  },
+  comment: {
+    add: async ({ commenterName, commenterEmail, text, slug } = {}) => {
+      return await post({
+        api: "AddArticleComment",
+        model: {
+          commenterName,
+          commenterEmail,
+          text,
+          slug
+        }
+      });
+    },
+    list: async ({ slug, page, pageSize } = {}) => {
+      return await get({
+        api: "GetArticleCommentsBySlug",
+        model: {
+          slug,
+          page,
+          pageSize
+        }
+      });
+    }
   }
 };
