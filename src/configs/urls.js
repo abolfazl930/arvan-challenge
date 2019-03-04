@@ -3,7 +3,7 @@ import enums from "../enums";
 const common = {};
 
 const development = {
-  endPointAdmin: "http://api.2lsbox.ir/api/pakziSite/"
+  endPointAdmin: "http://api.2lsbox.ir/api/blog/"
 };
 
 const production = {
