@@ -20,7 +20,8 @@ import { formatDate } from "../../utils/convert-date-format";
 import "./styles.css";
 class Blog extends Component {
   state = {
-    articles: []
+    articles: [],
+    pageCount: 0
   };
   page = 1;
   pageSize = 6;
@@ -34,15 +35,17 @@ class Blog extends Component {
     try {
       response = await admin.article.list({ page, pageSize });
       response = await response.json();
+
       const articles = response.data.value.result;
       this.setState(
         {
-          articles
+          articles,
+          pageCount: response.data.value.pageCount
         },
         () => console.log("Articles:", this.state.articles)
       );
     } catch {
-      alert("ارتباط با سرور برقرار نشد :(");
+      alert("ارتباط با سرور برقرار نشد");
     }
   };
 
@@ -52,7 +55,7 @@ class Blog extends Component {
   };
 
   render() {
-    const { articles } = this.state;
+    const { articles, pageCount } = this.state;
     return (
       <section className="blog-section">
         <Header title="Our Blog" content="home - blog" />
@@ -89,7 +92,7 @@ class Blog extends Component {
                       nextLabel={"next >"}
                       breakLabel={"..."}
                       breakClassName={"break-me"}
-                      pageCount={30}
+                      pageCount={pageCount}
                       marginPagesDisplayed={1}
                       pageRangeDisplayed={3}
                       onPageChange={this.handlePageClick}
