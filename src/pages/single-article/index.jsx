@@ -13,7 +13,7 @@ import SearchBox from "../../components/blog-search-box";
 import Category from "../../components/blog-categry";
 import LatestArticles from "../../components/latest-articles";
 import News from "../../components/news";
-
+import Comment from "../../components/comment";
 import "./styles.css";
 
 class SingleArticle extends Component {
@@ -103,6 +103,7 @@ class SingleArticle extends Component {
                           </span>
                         ))}
                       </div>
+                      <Comment slug={articleContent.slug} />
                     </>
                   )}
                 </div>
