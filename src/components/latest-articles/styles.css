@@ -21,6 +21,7 @@
   background-color: #e9eef2;
   border: none;
   margin-right: 8px;
+  object-fit: cover;
 }
 .la-articles-container__list__item__content__date {
   font-size: 14px;
