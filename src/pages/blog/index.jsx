@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 import Container from "react-strap-grid/container";
 import Row from "react-strap-grid/row";
@@ -14,44 +16,41 @@ import Card from "../../microcomponents/card";
 import Loader from "../../microcomponents/loader";
 import { trimString } from "../../utils/trime-string";
 import { formatDate } from "../../utils/convert-date-format";
-import { Link } from "react-router-dom";
-import ReactPaginate from "react-paginate";
 
 import "./styles.css";
 class Blog extends Component {
   state = {
-    articles: [],
-    page: 1,
-    pageSize: 6
+    articles: []
   };
+  page = 1;
+  pageSize = 6;
+
   componentDidMount() {
     this.loadArticles();
   }
   loadArticles = async () => {
-    const { page, pageSize } = this.state;
+    const { page, pageSize } = this;
     let response = null;
-    response = await admin.article.list({ page, pageSize });
-    response = await response.json();
-    const articles = response.data.value.result;
-    this.setState(
-      {
-        articles
-      },
-      () => console.log("Articles:", this.state.articles)
-    );
+    try {
+      response = await admin.article.list({ page, pageSize });
+      response = await response.json();
+      const articles = response.data.value.result;
+      this.setState(
+        {
+          articles
+        },
+        () => console.log("Articles:", this.state.articles)
+      );
+    } catch {
+      alert("ارتباط با سرور برقرار نشد :(");
+    }
   };
+
   handlePageClick = data => {
-    let selected = data.selected + 1;
-    console.log("selected", selected);
-    this.setState(
-      {
-        page: selected
-      },
-      () => {
-        console.log("state:", this.state.page);
-      }
-    );
+    this.page = data.selected + 1;
+    this.loadArticles();
   };
+
   render() {
     const { articles } = this.state;
     return (
