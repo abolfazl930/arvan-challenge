@@ -20,6 +20,13 @@ export default {
       });
     }
   },
+  category: {
+    get: async () => {
+      return await get({
+        api: "GetCategories"
+      });
+    }
+  },
   comment: {
     add: async ({ commenterName, commenterEmail, text, slug } = {}) => {
       return await post({
