@@ -12,7 +12,7 @@ class Footer extends Component {
       <footer className="footer d-flex justify-content-between align-items-center">
         <Container className="d-flex justify-content-between align-items-center">
           <p className="footer-copyright">
-            Designed By <b>Abolfazl Ahmadi :)</b>
+            Powered By <b>❤</b> Abolfazl Ahmadi
           </p>
           <ul className="footer-menu d-flex">
             {visibleRoutes({ visibleIn: ["footer"] }).map((route, index) => (
