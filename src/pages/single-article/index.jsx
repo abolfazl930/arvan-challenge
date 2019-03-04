@@ -33,33 +33,38 @@ class SingleArticle extends Component {
     const { match } = this.props;
     const slug = match.params.slug;
     let response = null;
-    let articleContent = null;
-    response = await admin.article.getBySlug({ slug });
-    articleContent = (await response.json()).data.value.result;
-    this.setState(
-      {
-        articleContent
-      },
-      () => console.log("setState in didmount:", this.state.articleContent)
-    );
+    try {
+      response = await admin.article.getBySlug({ slug });
+      response = await response.json();
+      const articleContent = response.data.value.result;
+      this.setState(
+        {
+          articleContent
+        },
+        () => console.log("setState in didmount:", this.state.articleContent)
+      );
+    } catch {}
   };
 
   loadArticles = async () => {
     const { page, pageSize } = this.state;
     let response = null;
-    response = await admin.article.list({ page, pageSize });
-    response = await response.json();
-    const articles = response.data.value.result;
-    this.setState(
-      {
-        articles
-      },
-      () => console.log("Articles:", this.state.articles)
-    );
+    try {
+      response = await admin.article.list({ page, pageSize });
+      response = await response.json();
+      const articles = response.data.value.result;
+      this.setState(
+        {
+          articles
+        },
+        () => console.log("Articles:", this.state.articles)
+      );
+    } catch {
+      alert("ارتباط با سرور برقرار نشد :(");
+    }
   };
 
   render() {
-    // console.log("render");
     const { articleContent, articles } = this.state;
     return (
       <section className="single-blog-section">
