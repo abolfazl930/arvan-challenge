@@ -5,10 +5,9 @@
   margin-bottom: 48px;
 }
 .pagination li {
-  margin: 0 4px;
+  margin: 0 8px;
   cursor: pointer;
   outline: none;
-  padding: 0 8px;
 }
 .pagination li.active {
   box-shadow: 0 0 3px grey;
@@ -18,4 +17,5 @@
   font-size: 18px;
   outline: 0;
   user-select: none;
+  padding: 0 8px;
 }
