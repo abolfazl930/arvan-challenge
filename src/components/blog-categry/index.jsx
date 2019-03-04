@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import admin from "../../services/admin";
+
 import "./styles.css";
 
 class SearchBox extends React.Component {
@@ -11,18 +13,23 @@ class SearchBox extends React.Component {
     this.loadCategory();
   }
 
-  loadCategory = () => {
-    this.setState({
-      categories: [
-        "Duplex Home",
-        "Drawing Rooms",
-        "Bedrooms",
-        "Kitchen Rooms",
-        "Bathrooms",
-        "Garden Home",
-        "Animation Design"
-      ]
-    });
+  loadCategory = async () => {
+    console.log("zzzz");
+    let response = null;
+    try {
+      response = await admin.category.get({});
+      response = await response.json();
+
+      const categories = response.data.value.result;
+      this.setState(
+        {
+          categories
+        },
+        () => console.log("categories:", this.state.categories)
+      );
+    } catch {
+      // alert("ارتباط با سرور برقرار نشد");
+    }
   };
 
   render() {
@@ -33,7 +40,9 @@ class SearchBox extends React.Component {
         <ul className="category-container__list">
           {categories.map((category, index) => (
             <li className="category-container__list__item" key={index}>
-              <Link to="#">{category}</Link>
+              <Link to="#" key={index}>
+                {category.title}
+              </Link>
             </li>
           ))}
         </ul>
