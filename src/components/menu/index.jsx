@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import routes, { visibleRoutes } from "../../configs/routes";
 import Button from "../../microcomponents/button";
 import Container from "react-strap-grid/container";
+import imgLogo from "../../assets/images/logo.png";
 import "./styles.css";
 class Menu extends Component {
   render() {
@@ -10,7 +11,9 @@ class Menu extends Component {
     return (
       <Container>
         <nav className="header__nav d-flex justify-content-between align-items-center">
-          <figure className="header__nav__logo">logo</figure>
+          <figure className="header__nav__logo">
+            <img src={imgLogo} />
+          </figure>
           <div className="d-flex align-items-center">
             <ul className="header__nav__menu">
               {visibleRoutes({ visibleIn: ["header"] }).map((route, index) => (
