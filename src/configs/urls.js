@@ -3,11 +3,11 @@ import enums from "../enums";
 const common = {};
 
 const development = {
-  endPointAdmin: "http://api.2lsbox.ir/api/blog/"
+  endPointAdmin: "http://api.koroo.ir/api/blog/"
 };
 
 const production = {
-  endPointAdmin: "http://serverhost.domain/api/v1"
+  endPointAdmin: "http://api.koroo.ir/api/blog/"
 };
 
 export default {
